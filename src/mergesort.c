@@ -1,4 +1,4 @@
 # include "mergesort.h"
 
-void mergesort() {
+void mergesort(const int *arr, int size) {
 }

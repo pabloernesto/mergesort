@@ -14,7 +14,7 @@ void test1() {
   int arr[] = {1,2,3,4,5,6,7,8,9,10};
   printf("test1: ");
   ARRAYPRINT(arr);
-  mergesort(arr);
+  mergesort(arr, sizeof(arr)/sizeof(arr[0]));
   printf("\n       ");
   ARRAYPRINT(arr);
   printf("\n\n");
