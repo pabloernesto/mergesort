@@ -8,22 +8,24 @@ void mergesort(int *arr, int size) {
   }
 
   // merge
-  int *a0 = arr;
-  int * const a1 = arr + size / 2;
-  int *b0 = arr + size / 2;
-  int * const b1 = arr + size;
+  int tmp[size / 2];
+  for (int i = 0; i < size / 2; i++)
+    tmp[i] = arr[i];
+  
+  int *a = tmp;
+  int * const enda = tmp + size / 2;
+  int *b = arr + size / 2;
+  int * const endb = arr + size;
 
-  while (a0 != a1 && b0 != b1) {
-    if (*a0 <= *b0) {
-      a0++;
+  for (int i = 0; i < size; i++) {
+    if (a == enda) {
+      arr[i] = *(b++);
+    } else if (b == endb) {
+      arr[i] = *(a++);
     } else {
-      // swap
-      int tmp = *a0;
-      *a0 = *b0;
-      *b0 = tmp;
-
-      a0++;
-      b0++;
+      int **minptr = *a <= *b ? &a : &b;
+      arr[i] = **minptr;
+      (*minptr)++;
     }
   }
 }
