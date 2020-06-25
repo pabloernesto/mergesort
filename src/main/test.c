@@ -20,6 +20,17 @@ void test1() {
   printf("\n\n");
 }
 
+void test2() {
+  int arr[] = {2,1};
+  printf("test2: ");
+  ARRAYPRINT(arr);
+  mergesort(arr, sizeof(arr)/sizeof(arr[0]));
+  printf("\n       ");
+  ARRAYPRINT(arr);
+  printf("\n\n");
+}
+
 int main(int argc, const char **argv) {
   test1();
+  test2();
 }
