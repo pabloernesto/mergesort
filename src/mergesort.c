@@ -1,6 +1,6 @@
 # include "mergesort.h"
 
-void mergesort(const int *arr, int size) {
+void mergesort(int *arr, int size) {
   // recursive call
   if (size > 1) {
     mergesort(arr, size / 2);
